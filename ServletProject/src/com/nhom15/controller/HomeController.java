@@ -34,11 +34,11 @@ public class HomeController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		UserService userService = new UserService();
-		List<User> users = userService.getAllUser();
-		for(User u : users) {
-			System.out.println(u.getName());
-		}
+//		UserService userService = new UserService();
+//		List<User> users = userService.getAllUser();
+//		for(User u : users) {
+//			System.out.println(u.getName());
+//		}
 		response.sendRedirect("views/login.jsp");
 	}
 

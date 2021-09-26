@@ -6,15 +6,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import connection.SQLConnection;
+import connection.MySQLConnection;
 
 public class LoginDao {
 	
 	public boolean login (String username,String password) {
-		Connection conn = SQLConnection.getJDBCConnection();
-		String sql = "select * from userr WHERE USERNAME = '" + username 
-				+"' AND PASSWORD = '" + password + "'";
-		
+		//Connection conn = SQLConnection.getJDBCConnection();
+		Connection conn = MySQLConnection.getConnection();
+		String sql = "select * from sinhvien WHERE name = '" + username 
+				+"' AND address = '" + password + "'";
+		System.out.println(sql);
 		try {
 			Statement statement = conn.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
