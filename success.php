@@ -1,28 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
-<body>
-	<h1>Đăng nhập thành công</h1>
-	<?php session_start(); echo($_SESSION["test"])?>
-	<form action="success.php" id="form" method="GET">
-		<div class="form-control">
-			<label for="">What's your name?</label>
-			<input type="text" name="name" placeholder="Type your name..">
-		</div>
-		<button type="submit">Ok</button>
-	</form>
-	<?php 
-	if(isset($_GET["name"])){
-		$username = $_GET["name"];	
-		if($username){
-			echo "Hello $username";
-		}
-	}	
-	?>
-	
-</body>
-</html>
+ <?php  
+ //entry.php  
+ session_start();  
+ if(!isset($_SESSION["username"]))  
+ {  
+      header("location:index.php?action=login");  
+ }  
+ ?>  
+ <!DOCTYPE html>  
+ <html>  
+      <head>  
+           <title>Document</title>  
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+      </head>  
+      <body>  
+           <br /><br />  
+           <div class="container" style="width:500px;">  
+                  
+                <?php  
+                echo '<h1>Welcome - '.$_SESSION["username"].'</h1>';  
+                echo '<label><a href="logout.php" style="text-decoration: none">Đăng xuất</a></label>';  
+                ?>  
+           </div>  
+      </body>  
+ </html>  
