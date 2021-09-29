@@ -4,7 +4,7 @@
 	$pass = $_GET["password"];
 
 	// Create connection
-	$conn = new mysqli('localhost', 'root', '', 'testqlsv');
+	$conn = new mysqli('localhost', 'root', 'admin@123', 'testqlsv');
 	// Check connection
 	if ($conn->connect_error) {
 	  die("Connection failed: " . $conn->connect_error);
